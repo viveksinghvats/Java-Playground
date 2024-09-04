@@ -1,0 +1,19 @@
+Rate Limiting:
+1.Token Bucket: Bucket fills with tokens at constant rate, Bucket has a maximum capacity.
+2. Leaky Bucket: Bucket fills with tokens at constant rate, and Request leaking at a constant rate, Bucket has a maximum capacity.
+3. Fixed Window counter: Time divided into blocks, and request allowed till maximum defined per blocked.
+4. Sliding Window Log: Sliding block defined of fix time size, we store timestamp of each request made.
+5. Siding Window counter: Siding window moves, we keep the count of last block, and current block, nd find the weightage sum(25, 75).  
+
+
+High level design Usual Components:
+1. Load Balancer, Application servers .
+2. Services.
+3. Database (Sql, NoSql)
+4. Caching
+5. Message Queue.
+6. Database schema
+
+Gossip Protocol:
+1. Centralized State Management Service: Like Apache Zookeeper, which keep the track of the state of every node in the system. Problem is single point failure.(Highly Consistent)
+2. Peer-To-Peer state management service: Highly available, Eventual consistency.(Works through gossip among the nodes).
